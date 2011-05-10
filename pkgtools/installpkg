@@ -182,7 +182,7 @@ if { [ -f "$VARDIR/$pkgname/installed" ] && [ $fixrel -eq 1 ]; }; then
 fi
 
 # unpack new files
-echo -e "$exclude" | tar -X - -x${OPT_VERBOSE:+v}zf $pkg || {
+echo -e "$exclude" | tar -X - -x${OPT_VERBOSE:+v}hzf $pkg || {
 	echo "pkg: couldn't extract package contents"
 	cleanup
 	exit 1
